@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lessonnote/pages/Single.dart';
 import 'package:lessonnote/pages/Stream_page.dart';
-import 'package:lessonnote/pages/auth/views/welcome_screen.dart';
 import 'package:lessonnote/pages/redirectpage.dart';
 import 'package:lessonnote/pages/upload.dart';
 
