@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../components/my_text_field.dart';
 import '../blocs/sing_in_bloc/sign_in_bloc.dart';
@@ -104,15 +105,17 @@ class _SignInScreenState extends State<SignInScreen> {
                   child: TextButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+
                         context.read<SignInBloc>().add(SignInRequired(
                           emailController.text,
                           passwordController.text)
                         );
+                        context.go('/redirect');
                       }
                     },
                     style: TextButton.styleFrom(
                       elevation: 3.0,
-                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      backgroundColor: Colors.blue,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(60)

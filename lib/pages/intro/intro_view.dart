@@ -21,7 +21,7 @@ class IntroView extends StatelessWidget {
     'intro_page_title_2': 'Learn and administer lessons',
     'intro_page_subtile_2':
         'Build a learning habit and make it a part of your day',
-    'intro_page_title_3': 'Lessons that work for your and your learners',
+    'intro_page_title_3': 'Lessons that work for you and your learners',
     'intro_page_subtile_3':
         'Learn and retain, with a mix of learning styles with the help of AI',
   };
@@ -51,18 +51,22 @@ class IntroView extends StatelessWidget {
                     width: 300.0,
                     height: 50.0,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go('/welcome');
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: StadiumBorder(),
                         backgroundColor: const Color.fromARGB(255, 5, 117, 209),
                       ),
                       child: const Text(
                         'next',
-                        style: TextStyle(color: Colors.white),
+                        
+                        style: TextStyle(color: Colors.white,fontSize: 16,
+                          fontWeight: FontWeight.w600),
                       ),
                     ),
                   ),
-                  Row(
+                  /*Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
@@ -81,6 +85,7 @@ class IntroView extends StatelessWidget {
                       ),
                     ],
                   )
+                  */
                 ],
               )
             ],

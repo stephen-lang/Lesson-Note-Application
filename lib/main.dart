@@ -1,33 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:lessonnote/Constants/const.dart';
-import 'package:lessonnote/routes/app_router.dart';
+import 'package:lessonnote/app.dart';
+import 'package:lessonnote/simple_bloc_observer.dart';
+import 'package:user_repository/user_repository.dart';
+ void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
 
-void main() {
+  );
+Bloc.observer =   SimpleBlocObserver();
    Gemini.init(
     
       apiKey: GEMINI_API_KEY, enableDebugging: true);
-  runApp(const MyApp());
+  runApp(MyApp(FirebaseUserRepo())); // create an instance of firebase repo
 }
-
- 
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      routerConfig:AppRouter.router,
-    );
-  }
-}
- 
  
