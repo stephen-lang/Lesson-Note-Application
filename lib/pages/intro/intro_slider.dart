@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lessonnote/pages/intro/intro_view.dart';
 import 'package:lessonnote/pages/intro/intromodel.dart';
 
 // _ means a private
@@ -112,3 +113,4 @@ final selectedImageNotifier = ValueNotifier(0);
     );
   }
 }
+

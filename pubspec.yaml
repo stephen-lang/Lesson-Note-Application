@@ -97,6 +97,10 @@ flutter:
     - assets/images/svg/
     - assets/icons/
     - assets/screenshots/
+    - assets/images/svg/online_learning.svg
+    - assets/images/svg/researching.svg
+    - assets/images/svg/studying.svg
+    - assets/images/svg/teaching.svg
     
 
 

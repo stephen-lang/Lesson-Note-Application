@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lessonnote/pages/auth/views/welcome_screen.dart';
-import 'package:lessonnote/pages/intro/intro_view.dart';
+ import 'package:lessonnote/pages/intro/intromodel.dart';
 import 'package:lessonnote/routes/app_routes.dart';
 import 'package:lessonnote/routes/app_nav_bar.dart';
 

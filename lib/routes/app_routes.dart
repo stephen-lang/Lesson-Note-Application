@@ -3,13 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lessonnote/pages/Single.dart';
 import 'package:lessonnote/pages/Stream_page.dart';
+import 'package:lessonnote/pages/home/dashboard.dart';
 import 'package:lessonnote/pages/redirectpage.dart';
 import 'package:lessonnote/pages/upload.dart';
 
 // Route page
 class AppRoutes {
   static final mainMenuRoutes = <RouteBase>[
-     
+      GoRoute(
+      name: Dash.routeName, // Single Entry page
+      path: Dash.routeName,
+      pageBuilder: (_, state) {
+        return CustomTransitionPage<void>(
+          key: state.pageKey,
+          transitionDuration: kThemeAnimationDuration,
+          reverseTransitionDuration: kThemeAnimationDuration,
+          child: const Dash(),
+          transitionsBuilder: (_, animation, __, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+      },
+    ),
     GoRoute(
       name: SinglePage.routeName, // Single Entry page
       path: SinglePage.routeName,

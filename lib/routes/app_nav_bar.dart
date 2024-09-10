@@ -3,7 +3,8 @@ import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lessonnote/pages/Single.dart';
 import 'package:lessonnote/pages/Stream_page.dart';
-import 'package:lessonnote/pages/intro/intro_view.dart';
+import 'package:lessonnote/pages/home/dashboard.dart';
+ 
 import 'package:lessonnote/pages/upload.dart';
 
 class AppNavBar extends StatefulWidget {
@@ -31,7 +32,7 @@ class _AppNavBarState extends State<AppNavBar> {
     ),
     TabItem(
       icon: Icons.inbox_rounded,
-      title: 'Cart',
+      title: 'Entry',
     ),
     
   ];
@@ -39,7 +40,7 @@ class _AppNavBarState extends State<AppNavBar> {
   int selectedIndex = 0;
 
   Color colorSelect = const Color(0XFF0686F8);
-  Color color = const Color(0XFF7AC0FF);
+  Color color = const Color.fromARGB(255, 3, 6, 8);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class _AppNavBarState extends State<AppNavBar> {
       body: widget.child,
       bottomNavigationBar: BottomBarInspiredFancy(
         items: items,
-        backgroundColor: Colors.green.withOpacity(0.21),
+        backgroundColor: const Color.fromARGB(255, 225, 235, 248).withOpacity(0.21),
         color: color,
         colorSelected: colorSelect,
         indexSelected: selectedIndex,
@@ -66,7 +67,7 @@ class _AppNavBarState extends State<AppNavBar> {
   static int _calculateSelectedIndex(BuildContext context) {
     final String location = GoRouterState.of(context).uri.toString();
 
-    if (location.startsWith(IntroView.routeName)) {
+    if (location.startsWith(Dash.routeName)) {
       return 0;
     }
     if (location.startsWith(Homepage.routeName)) {
@@ -84,7 +85,7 @@ class _AppNavBarState extends State<AppNavBar> {
   void _onTap(BuildContext context, int index) {
     switch (index) {
       case 0:
-        GoRouter.of(context).go(IntroView.routeName);
+        GoRouter.of(context).go(Dash.routeName);
         break;
       case 1:
         GoRouter.of(context).go(Homepage.routeName);
