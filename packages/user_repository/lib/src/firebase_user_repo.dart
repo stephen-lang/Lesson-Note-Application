@@ -50,7 +50,7 @@ class FirebaseUserRepo implements UserRepository {
       rethrow;
     }
   }
-  
+
 //signout user below
   @override
   Future<void> logOut() async {

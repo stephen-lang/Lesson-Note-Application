@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:lessonnote/nav_bar.dart';
+import 'package:lessonnote/pages/home/dashboard.dart';
 import '../../../components/my_text_field.dart';
 import '../blocs/sing_in_bloc/sign_in_bloc.dart';
 
@@ -29,8 +31,9 @@ class _SignInScreenState extends State<SignInScreen> {
 				if(state is SignInSuccess) {
 					setState(() {
 					  signInRequired = false;
-              context.go('/dashboard');
+              //context.go('/dashboard')
               _errorMsg = null; // Clear error message on success
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavigationMenu()));
 					});
 				} else if(state is SignInProcess) {
 					setState(() {

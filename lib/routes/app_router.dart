@@ -43,16 +43,17 @@ class AppRouter {
         builder: (_, state) => const IntroView(),
       ),
       // ShellRoute to persist the bottom navigation bar with the main routes
-      ShellRoute(
+     /* ShellRoute(
         navigatorKey: _mainMenuNavigatorKey,
         builder: (_, __, child) {
-          return AppNavBar(child: child);
+          return AppNavBar();
         },
         routes: <RouteBase>[
           ...AppRoutes.mainMenuRoutes,
           // Add more routes here as needed
         ],
       ),
+      */
     ],
   );
 }

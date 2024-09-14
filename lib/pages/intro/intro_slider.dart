@@ -57,7 +57,7 @@ final selectedImageNotifier = ValueNotifier(0);
         String ext = item.imagePath.split(".").last;
         double height = 200;
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4),
+          padding: const EdgeInsets.symmetric(horizontal: 4),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

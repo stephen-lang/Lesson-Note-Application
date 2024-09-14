@@ -6,15 +6,14 @@ import 'package:lessonnote/Constants/const.dart';
 import 'package:lessonnote/app.dart';
 import 'package:lessonnote/simple_bloc_observer.dart';
 import 'package:user_repository/user_repository.dart';
- void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
 
-  );
-Bloc.observer =   SimpleBlocObserver();
-   Gemini.init(
-    
-      apiKey: GEMINI_API_KEY, enableDebugging: true);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  Bloc.observer = SimpleBlocObserver();
+  Gemini.init(apiKey: GEMINI_API_KEY, enableDebugging: true);
   runApp(MyApp(FirebaseUserRepo())); // create an instance of firebase repo
 }
- 
+
+
+// 1st level of the app

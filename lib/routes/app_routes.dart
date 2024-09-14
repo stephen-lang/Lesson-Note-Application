@@ -11,7 +11,7 @@ import 'package:lessonnote/pages/upload.dart';
 class AppRoutes {
   static final mainMenuRoutes = <RouteBase>[
       GoRoute(
-      name: Dash.routeName, // Single Entry page
+      name: Dash.routeName, // Dashboard page
       path: Dash.routeName,
       pageBuilder: (_, state) {
         return CustomTransitionPage<void>(
